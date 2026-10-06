@@ -4,6 +4,7 @@ set -euo pipefail
 APP_DIR="/opt/hris-informasi"
 APP_USER="hris-informasi"
 ENV_DIR="/etc/hris-informasi"
+REPO_URL="https://github.com/ditdoank007/Project-HRIS-Informasi.git"
 
 apt-get update
 apt-get install -y git python3 python3-venv python3-pip
@@ -15,18 +16,17 @@ fi
 mkdir -p "$APP_DIR" "$ENV_DIR"
 chown -R "$APP_USER:$APP_USER" "$APP_DIR"
 
-cd "$APP_DIR"
-if [ ! -d .git ]; then
-  git clone https://github.com/ditdoank007/Project-HRIS-Informasi.git .
+if [ ! -d "$APP_DIR/.git" ]; then
+  runuser -u "$APP_USER" -- git clone "$REPO_URL" "$APP_DIR"
 else
-  git pull --ff-only
+  runuser -u "$APP_USER" -- git -C "$APP_DIR" pull --ff-only
 fi
 
-python3 -m venv .venv
-.venv/bin/pip install --upgrade pip
-.venv/bin/pip install -r requirements.txt
+runuser -u "$APP_USER" -- python3 -m venv "$APP_DIR/.venv"
+runuser -u "$APP_USER" -- "$APP_DIR/.venv/bin/pip" install --upgrade pip
+runuser -u "$APP_USER" -- "$APP_DIR/.venv/bin/pip" install -r "$APP_DIR/requirements.txt"
 
-install -m 0644 systemd/hris-informasi.service /etc/systemd/system/hris-informasi.service
+install -m 0644 "$APP_DIR/systemd/hris-informasi.service" /etc/systemd/system/hris-informasi.service
 systemctl daemon-reload
 
 echo "Bootstrap selesai. Buat /etc/hris-informasi/hris-informasi.env sebelum mengaktifkan service."
