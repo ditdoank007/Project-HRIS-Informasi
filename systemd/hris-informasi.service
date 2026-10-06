@@ -1,0 +1,17 @@
+[Unit]
+Description=HRIS INFORMASI
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=hris-informasi
+Group=hris-informasi
+WorkingDirectory=/opt/hris-informasi
+EnvironmentFile=-/etc/hris-informasi/hris-informasi.env
+ExecStart=/opt/hris-informasi/.venv/bin/gunicorn --bind 127.0.0.1:3000 --workers 2 --access-logfile - --error-logfile - app:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
