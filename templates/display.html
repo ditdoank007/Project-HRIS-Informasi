@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HRIS INFORMASI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/display.css') }}">
+</head>
+<body>
+  <main class="screen">
+    <header class="topbar">
+      <div class="brand">HRIS INFORMASI</div>
+      <div class="clock" id="clock">--:--:--</div>
+    </header>
+
+    <section class="content">
+      <div class="placeholder">
+        <div class="eyebrow">DIGITAL SIGNAGE</div>
+        <h1>HRIS INFORMASI</h1>
+        <p>Media informasi digital Basarnas Surabaya.</p>
+      </div>
+    </section>
+
+    <footer class="running-text">
+      <span>Selamat datang di Basarnas Surabaya</span>
+    </footer>
+  </main>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent =
+        new Intl.DateTimeFormat("id-ID", {
+          timeZone: "Asia/Jakarta",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false
+        }).format(now);
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
