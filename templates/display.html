@@ -2,44 +2,145 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HRIS INFORMASI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HRIS INFORMASI — BASARNAS SURABAYA</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/display.css') }}">
 </head>
 <body>
   <main class="screen">
     <header class="topbar">
-      <div class="brand">HRIS INFORMASI</div>
-      <div class="clock" id="clock">--:--:--</div>
+      <div class="brand">
+        <div class="sar-mark"><span>SAR</span></div>
+        <div>
+          <div class="brand-title">BASARNAS</div>
+          <div class="brand-subtitle">KANTOR SAR SURABAYA</div>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <span class="live-dot"></span>
+        <span>MEDIA INFORMASI</span>
+      </div>
+
+      <div class="datetime">
+        <div id="clock">--:--:--</div>
+        <div id="date">--</div>
+      </div>
     </header>
 
-    <section class="content">
-      <div class="placeholder">
-        <div class="eyebrow">DIGITAL SIGNAGE</div>
-        <h1>HRIS INFORMASI</h1>
-        <p>Media informasi digital Basarnas Surabaya.</p>
+    <section class="dashboard">
+      <section class="hero-panel panel">
+        <div class="hero-image">
+          <div class="hero-overlay"></div>
+          <div class="hero-copy">
+            <span class="section-label">INFORMASI UTAMA</span>
+            <h1>Selamat Datang<br>di Basarnas Surabaya</h1>
+            <p>Media informasi digital untuk keluarga besar Basarnas Surabaya.</p>
+          </div>
+          <div class="slide-dots">
+            <span class="active"></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-column">
+        <section class="panel agenda-card">
+          <div class="card-heading">
+            <div>
+              <span class="section-label">HARI INI</span>
+              <h2>Agenda Rapat</h2>
+            </div>
+            <span class="card-icon">▦</span>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-time">09:00</div>
+            <div>
+              <strong>Rapat Koordinasi Pimpinan</strong>
+              <span>Ruang Rapat Utama</span>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-time">13:30</div>
+            <div>
+              <strong>Evaluasi Operasi SAR</strong>
+              <span>Ruang Rapat Lt. 2</span>
+            </div>
+          </div>
+
+          <div class="empty-note">Data agenda akan terhubung ke HRIS.</div>
+        </section>
+
+        <section class="panel quick-card">
+          <div class="card-heading">
+            <div>
+              <span class="section-label">AGENDA</span>
+              <h2>Kesamaptaan</h2>
+            </div>
+            <span class="card-icon">◷</span>
+          </div>
+          <div class="quick-row">
+            <div><span class="muted">Periode</span><strong>Oktober 2026</strong></div>
+            <div class="qr-mini">QR</div>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="info-row">
+      <div class="info-card panel birthday">
+        <span class="info-icon">★</span>
+        <div>
+          <span class="section-label">HARI ULANG TAHUN</span>
+          <strong>Selamat Ulang Tahun</strong>
+          <span>Semoga sehat, sukses dan selalu dalam lindungan Tuhan.</span>
+        </div>
+      </div>
+
+      <div class="info-card panel status">
+        <span class="status-dot"></span>
+        <div>
+          <span class="section-label">SISTEM HRIS</span>
+          <strong>Terhubung &amp; Aktif</strong>
+          <span>Informasi diperbarui otomatis</span>
+        </div>
       </div>
     </section>
 
-    <footer class="running-text">
-      <span>Selamat datang di Basarnas Surabaya</span>
+    <footer class="ticker">
+      <div class="ticker-label">PENGUMUMAN</div>
+      <div class="ticker-track">
+        <span>Selamat datang di Kantor SAR Surabaya &nbsp; • &nbsp; Pantau informasi terbaru melalui HRIS INFORMASI &nbsp; • &nbsp; Utamakan keselamatan dalam setiap pelaksanaan tugas.</span>
+      </div>
     </footer>
   </main>
 
   <script>
-    function updateClock() {
+    const clock = document.getElementById("clock");
+    const date = document.getElementById("date");
+
+    function updateDateTime() {
       const now = new Date();
-      document.getElementById("clock").textContent =
-        new Intl.DateTimeFormat("id-ID", {
-          timeZone: "Asia/Jakarta",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false
-        }).format(now);
+      clock.textContent = new Intl.DateTimeFormat("id-ID", {
+        timeZone: "Asia/Jakarta",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      }).format(now);
+
+      date.textContent = new Intl.DateTimeFormat("id-ID", {
+        timeZone: "Asia/Jakarta",
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+      }).format(now);
     }
-    updateClock();
-    setInterval(updateClock, 1000);
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
   </script>
 </body>
 </html>
