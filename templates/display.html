@@ -76,7 +76,6 @@
           <div class="card-heading">
             <div>
               <span class="section-label" id="qr-kicker">KESAMAPTAAN</span>
-              <h2 id="qr-title">QR Code Kesamaptaan</h2>
             </div>
             <span class="card-icon">⌁</span>
           </div>
@@ -118,7 +117,6 @@
     const heroSlides = [...document.querySelectorAll(".hero-slide")];
     const heroDots = [...document.querySelectorAll(".slide-dots span")];
     const qrKicker = document.getElementById("qr-kicker");
-    const qrTitle = document.getElementById("qr-title");
     const qrPeriod = document.getElementById("qr-period");
     const qrDate = document.getElementById("qr-date");
     const qrDescription = document.getElementById("qr-description");
@@ -152,7 +150,6 @@
     function showQr(index) {
       const guestbook = index === 1;
       qrKicker.textContent = guestbook ? "BUKU TAMU" : "KESAMAPTAAN";
-      qrTitle.textContent = guestbook ? "QR Code Buku Tamu" : "QR Code Kesamaptaan";
       qrDescription.textContent = guestbook
         ? "QR untuk akses Buku Tamu Kantor SAR Surabaya."
         : "QR mengikuti agenda Kesamaptaan aktif sesuai tanggal dan jam.";
