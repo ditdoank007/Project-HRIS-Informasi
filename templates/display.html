@@ -16,29 +16,41 @@
           <div class="brand-subtitle">KANTOR SAR SURABAYA</div>
         </div>
       </div>
-
-      <div class="header-center">
-        <span class="live-dot"></span>
-        <span>MEDIA INFORMASI</span>
-      </div>
-
-      <div class="datetime">
-        <div id="clock">--:--:--</div>
-        <div id="date">--</div>
-      </div>
+      <div class="header-center"><span class="live-dot"></span><span>MEDIA INFORMASI</span></div>
+      <div class="datetime"><div id="clock">--:--:--</div><div id="date">--</div></div>
     </header>
 
     <section class="dashboard">
       <section class="hero-panel panel">
         <div class="hero-image">
           <div class="hero-overlay"></div>
-          <div class="hero-copy">
-            <span class="section-label">INFORMASI UTAMA</span>
-            <h1>Selamat Datang<br>di Basarnas Surabaya</h1>
-            <p>Media informasi digital untuk keluarga besar Basarnas Surabaya.</p>
+
+          <div class="hero-slide active">
+            <div class="hero-copy">
+              <span class="section-label">INFORMASI UTAMA</span>
+              <h1>Selamat Datang<br>di Basarnas Surabaya</h1>
+              <p>Media informasi digital untuk keluarga besar Basarnas Surabaya.</p>
+            </div>
           </div>
+
+          <div class="hero-slide">
+            <div class="hero-copy">
+              <span class="section-label">INFORMASI UTAMA</span>
+              <h1>Siaga, Cepat,<br>dan Profesional</h1>
+              <p>Memberikan pelayanan pencarian dan pertolongan secara cepat dan terintegrasi.</p>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <div class="hero-copy">
+              <span class="section-label">INFORMASI UTAMA</span>
+              <h1>Keselamatan<br>Adalah Prioritas</h1>
+              <p>Selalu utamakan keselamatan dalam setiap pelaksanaan tugas SAR.</p>
+            </div>
+          </div>
+
           <div class="slide-dots">
-            <span class="active"></span><span></span><span></span><span></span><span></span>
+            <span class="active"></span><span></span><span></span>
           </div>
         </div>
       </section>
@@ -46,44 +58,39 @@
       <aside class="side-column">
         <section class="panel agenda-card">
           <div class="card-heading">
-            <div>
-              <span class="section-label">HARI INI</span>
-              <h2>Agenda Rapat</h2>
-            </div>
+            <div><span class="section-label">HARI INI</span><h2>Agenda Rapat</h2></div>
             <span class="card-icon">▦</span>
           </div>
-
           <div class="agenda-item">
             <div class="agenda-time">09:00</div>
-            <div>
-              <strong>Rapat Koordinasi Pimpinan</strong>
-              <span>Ruang Rapat Utama</span>
-            </div>
+            <div><strong>Rapat Koordinasi Pimpinan</strong><span>Ruang Rapat Utama</span></div>
           </div>
-
           <div class="agenda-item">
             <div class="agenda-time">13:30</div>
-            <div>
-              <strong>Evaluasi Operasi SAR</strong>
-              <span>Ruang Rapat Lt. 2</span>
-            </div>
+            <div><strong>Evaluasi Operasi SAR</strong><span>Ruang Rapat Lt. 2</span></div>
           </div>
-
           <div class="empty-note">Data agenda akan terhubung ke HRIS.</div>
         </section>
 
-        <section class="panel quick-card">
+        <section class="panel quick-card qr-card">
           <div class="card-heading">
             <div>
-              <span class="section-label">AGENDA</span>
-              <h2>Kesamaptaan</h2>
+              <span class="section-label" id="qr-kicker">KESAMAPTAAN</span>
+              <h2 id="qr-title">QR Code Kesamaptaan</h2>
             </div>
-            <span class="card-icon">◷</span>
+            <span class="card-icon">⌁</span>
           </div>
-          <div class="quick-row">
-            <div><span class="muted">Periode</span><strong>Oktober 2026</strong></div>
-            <div class="qr-mini">QR</div>
+          <div class="qr-content">
+            <div class="qr-placeholder" aria-label="QR Code preview">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="qr-copy">
+              <span class="muted" id="qr-period">Tanggal &amp; waktu</span>
+              <strong id="qr-date">07 Oktober 2026</strong>
+              <span id="qr-description">QR akan mengikuti agenda Kesamaptaan aktif sesuai tanggal dan jam.</span>
+            </div>
           </div>
+          <div class="qr-switch"><span class="qr-switch-active"></span><span></span></div>
         </section>
       </aside>
     </section>
@@ -91,56 +98,86 @@
     <section class="info-row">
       <div class="info-card panel birthday">
         <span class="info-icon">★</span>
-        <div>
-          <span class="section-label">HARI ULANG TAHUN</span>
-          <strong>Selamat Ulang Tahun</strong>
-          <span>Semoga sehat, sukses dan selalu dalam lindungan Tuhan.</span>
-        </div>
+        <div><span class="section-label">HARI ULANG TAHUN</span><strong>Selamat Ulang Tahun</strong><span>Semoga sehat, sukses dan selalu dalam lindungan Tuhan.</span></div>
       </div>
-
       <div class="info-card panel status">
         <span class="status-dot"></span>
-        <div>
-          <span class="section-label">SISTEM HRIS</span>
-          <strong>Terhubung &amp; Aktif</strong>
-          <span>Informasi diperbarui otomatis</span>
-        </div>
+        <div><span class="section-label">SISTEM HRIS</span><strong>Terhubung &amp; Aktif</strong><span>Informasi diperbarui otomatis</span></div>
       </div>
     </section>
 
     <footer class="ticker">
       <div class="ticker-label">PENGUMUMAN</div>
-      <div class="ticker-track">
-        <span>Selamat datang di Kantor SAR Surabaya &nbsp; • &nbsp; Pantau informasi terbaru melalui HRIS INFORMASI &nbsp; • &nbsp; Utamakan keselamatan dalam setiap pelaksanaan tugas.</span>
-      </div>
+      <div class="ticker-track"><span>Selamat datang di Kantor SAR Surabaya &nbsp; • &nbsp; Pantau informasi terbaru melalui HRIS INFORMASI &nbsp; • &nbsp; Utamakan keselamatan dalam setiap pelaksanaan tugas.</span></div>
     </footer>
   </main>
 
   <script>
     const clock = document.getElementById("clock");
     const date = document.getElementById("date");
+    const heroSlides = [...document.querySelectorAll(".hero-slide")];
+    const heroDots = [...document.querySelectorAll(".slide-dots span")];
+    const qrKicker = document.getElementById("qr-kicker");
+    const qrTitle = document.getElementById("qr-title");
+    const qrPeriod = document.getElementById("qr-period");
+    const qrDate = document.getElementById("qr-date");
+    const qrDescription = document.getElementById("qr-description");
+    const qrDots = [...document.querySelectorAll(".qr-switch span")];
 
     function updateDateTime() {
       const now = new Date();
+      const options = { timeZone: "Asia/Jakarta" };
+
       clock.textContent = new Intl.DateTimeFormat("id-ID", {
-        timeZone: "Asia/Jakarta",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: false
+        ...options, hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
       }).format(now);
 
       date.textContent = new Intl.DateTimeFormat("id-ID", {
-        timeZone: "Asia/Jakarta",
-        weekday: "long",
-        day: "2-digit",
-        month: "long",
-        year: "numeric"
+        ...options, weekday: "long", day: "2-digit", month: "long", year: "numeric"
       }).format(now);
+
+      qrDate.textContent = new Intl.DateTimeFormat("id-ID", {
+        ...options, day: "2-digit", month: "long", year: "numeric"
+      }).format(now);
+      qrPeriod.textContent = "Aktif " + new Intl.DateTimeFormat("id-ID", {
+        ...options, hour: "2-digit", minute: "2-digit", hour12: false
+      }).format(now) + " WIB";
     }
 
+    function showHero(index) {
+      heroSlides.forEach((el, i) => el.classList.toggle("active", i === index));
+      heroDots.forEach((el, i) => el.classList.toggle("active", i === index));
+    }
+
+    function showQr(index) {
+      const guestbook = index === 1;
+      qrKicker.textContent = guestbook ? "BUKU TAMU" : "KESAMAPTAAN";
+      qrTitle.textContent = guestbook ? "QR Code Buku Tamu" : "QR Code Kesamaptaan";
+      qrDescription.textContent = guestbook
+        ? "QR untuk akses Buku Tamu Kantor SAR Surabaya."
+        : "QR mengikuti agenda Kesamaptaan aktif sesuai tanggal dan jam.";
+      qrDots.forEach((el, i) => el.classList.toggle("qr-switch-active", i === index));
+    }
+
+    let heroIndex = 0;
+    let qrIndex = 0;
+
     updateDateTime();
+    showHero(heroIndex);
+    showQr(qrIndex);
     setInterval(updateDateTime, 1000);
+
+    // Rotasi konten utama setiap 1 menit.
+    setInterval(() => {
+      heroIndex = (heroIndex + 1) % heroSlides.length;
+      showHero(heroIndex);
+    }, 60000);
+
+    // QR Kesamaptaan dan Buku Tamu bergantian setiap 1 menit.
+    setInterval(() => {
+      qrIndex = (qrIndex + 1) % 2;
+      showQr(qrIndex);
+    }, 60000);
   </script>
 </body>
 </html>
